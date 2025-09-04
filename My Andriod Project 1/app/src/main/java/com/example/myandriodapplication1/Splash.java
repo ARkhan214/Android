@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,8 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Splash extends AppCompatActivity {
-
-
 
     private TextView splashText;
     private String message = "Wellcome to Java World";
@@ -43,6 +42,7 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         splashText = findViewById(R.id.splashText);
+
         handler.postDelayed(characterAdder,delay);
 
     }
@@ -52,4 +52,24 @@ public class Splash extends AppCompatActivity {
         super.onDestroy();
         handler.removeCallbacks(characterAdder);
     }
+
+
+
+
+//
+//private long splashDelay = 2000; // 3 seconds
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        EdgeToEdge.enable(this);
+//        setContentView(R.layout.activity_splash);
+//
+//
+//        new Handler().postDelayed(() -> {
+//            startActivity(new Intent(Splash.this, Home.class));
+//            finish();
+//        }, splashDelay);
+//    }
+
 }
