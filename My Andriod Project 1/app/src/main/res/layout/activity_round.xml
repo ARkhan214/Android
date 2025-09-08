@@ -7,14 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".Round">
 
-
-    <TextView
+    <WebView
+        android:id="@+id/webRound"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:textColor="#1A020B"
-        android:textStyle="bold"
-        android:ellipsize="none"
-        android:text="Wellcome to new Round"/>
-
+/>
 </androidx.constraintlayout.widget.ConstraintLayout>
