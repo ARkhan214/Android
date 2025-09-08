@@ -87,30 +87,42 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
+
     private void setOperator(String op){
         if(!input.isEmpty()){
-            num1=Double.parseDouble(input);
-            operator=op;
-            input="";
+            num1 = Double.parseDouble(input);
+            operator = op;
+            input = input + operator;
+            tvInput.setText(input);
+//            tvInput.setText(num1 + " " + operator); // for view operator
+//            input = "";
         }
     }
 
+
+
     private void calculate(){
         if(!input.isEmpty() && !operator.isEmpty()){
-            num2=Double.parseDouble(input);
-            double result=0;
+            String[] parts = input.split(java.util.regex.Pattern.quote(operator)); //operotor diea devide
+            if(parts.length > 1){
+                num2 = Double.parseDouble(parts[1]); // second number
+            }
+
+            double result = 0;
             switch(operator){
-                case "+": result=num1+num2; break;
-                case "-": result=num1-num2; break;
-                case "*": result=num1*num2; break;
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
                 case "/":
-                    if(num2!=0) result=num1/num2;
-                    else { tvInput.setText("Error"); return;}
+                    if(num2 != 0) result = num1 / num2;
+                    else { tvInput.setText("Error"); return; }
                     break;
             }
+
             tvInput.setText(String.valueOf(result));
-            input=String.valueOf(result);
-            operator="";
+            input = String.valueOf(result); // store the result in input for the next calculation
+            operator = "";
         }
     }
+
 }
