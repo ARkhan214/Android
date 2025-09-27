@@ -20,6 +20,11 @@ class Watch : AppCompatActivity() {
 
     private lateinit var alarmButton: Button // New button
 
+    private lateinit var timerButton: Button  // Timer button
+
+
+
+
     private var seconds = 0
     private var running = false
     private val handler = Handler(Looper.getMainLooper())
@@ -41,6 +46,7 @@ class Watch : AppCompatActivity() {
         stopButton = findViewById(R.id.stopButton)
         resetButton = findViewById(R.id.resetButton)
         alarmButton = findViewById(R.id.alarmButton)
+        timerButton = findViewById(R.id.timerButton)  // findViewById for timerButton
 
         // Button listeners
         startButton.setOnClickListener { running = true }
@@ -54,6 +60,12 @@ class Watch : AppCompatActivity() {
         // Alarm button listener
         alarmButton.setOnClickListener {
             val intent = Intent(this, AlarmActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Timer button listener → open TimerActivity
+        timerButton.setOnClickListener {
+            val intent = Intent(this, Timer::class.java)
             startActivity(intent)
         }
 

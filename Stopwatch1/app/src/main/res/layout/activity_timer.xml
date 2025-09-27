@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".Timer">
+
+    <!-- Hour, Minute, Second Inputs -->
+    <EditText
+        android:id="@+id/etHour"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="HH"
+        android:inputType="number"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etMinute"
+        android:layout_marginEnd="10dp"/>
+
+    <EditText
+        android:id="@+id/etMinute"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="MM"
+        android:inputType="number"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/etHour"
+        app:layout_constraintStart_toEndOf="@+id/etHour"
+        app:layout_constraintEnd_toStartOf="@+id/etSecond"
+        android:layout_marginEnd="10dp"/>
+
+    <EditText
+        android:id="@+id/etSecond"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="SS"
+        android:inputType="number"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/etMinute"
+        app:layout_constraintStart_toEndOf="@+id/etMinute"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Timer Display -->
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textSize="36sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/etHour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Buttons: Start, Pause, Reset -->
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPause"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pause"
+        app:layout_constraintTop_toTopOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/btnStart"
+        app:layout_constraintEnd_toStartOf="@+id/btnReset"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        app:layout_constraintTop_toTopOf="@+id/btnStart"
+        app:layout_constraintStart_toEndOf="@+id/btnPause"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
