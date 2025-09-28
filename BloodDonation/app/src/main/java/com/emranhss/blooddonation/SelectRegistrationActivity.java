@@ -26,11 +26,20 @@ public class SelectRegistrationActivity extends AppCompatActivity {
         recipient = findViewById(R.id.recipient);
         backButton = findViewById(R.id.backButton);
 
-        donor.setOnClickListener(new View().OnClickListener() {
+//        donor.setOnClickListener(new View().OnClickListener() {
+//            @Override
+//            public void onClick (View v){
+//                Intent intent = new Intent(SelectRegistrationActivity.this, DonorRegistrationActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
+        donor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SelectRegistrationActivity.this, DonorRegistrationActivity.class);
-                startActivity(intent);
+               startActivity(intent);
             }
         });
 

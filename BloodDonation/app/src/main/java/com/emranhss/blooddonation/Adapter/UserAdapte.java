@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.emranhss.blooddonation.Email.JavaMailApi;
 import com.emranhss.blooddonation.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private Context context;
@@ -67,8 +70,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(context).setTitle("SEND EMAIL").setMessage("Send mail to " + user.getName() + "?")
-                        .setCancelable(false).setPositiveButton("Yes", new DialogInterface().OnClickListener() {
+                        .setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
+                            public void onClick(DialogInterface dialog, int which) {
                                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 reference.addValueEventListener(new ValueEventListener() {
                                     @Override

@@ -57,7 +57,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
-        loginBtn.setOnClickListener(new View().OnClickListener() {
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String email = loginEmail.getText().toString().trim();
@@ -93,6 +94,49 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+//        loginBtn.setOnClickListener(new View().OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final String email = loginEmail.getText().toString().trim();
+//                final String password = loginPassword.getText().toString().trim();
+//
+//                if(TextUtils.isEmpty(email)){
+//                    loginEmail.setError("Email is Required");
+//                }
+//                if(TextUtils.isEmpty(password)){
+//                    loginPassword.setError("Password is required");
+//                }
+//                else {
+//                    loader.setMessage("Just a Minute...");
+//                    loader.setCanceledOnTouchOutside(false);
+//                    loader.show();
+//
+//                    userAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            if(task.isSuccessful()){
+//                                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+//                                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+//                                startActivity(intent);
+//                                finish();
+//                            }
+//                            else{
+//                                Toast.makeText(LoginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+//                            }
+//                            loader.dismiss();
+//                        }
+//                    });
+//
+//                }
+//            }
+//        });
+
+
+
+
+
 
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override

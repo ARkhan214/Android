@@ -60,7 +60,7 @@
                     android:layout_width="157dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Limon Islam Borno"
+                    android:text="Md Rahim Khan"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="01911-678100"
+                    android:text="01777051706"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -76,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="limonislamborno@gmail.com"
+                    android:text="mdrahimkhan107107@gmail.com"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </LinearLayout>

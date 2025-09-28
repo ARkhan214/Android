@@ -71,4 +71,15 @@ dependencies {
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
+    // Glide (✅ Kotlin DSL syntax)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
+    // ✅ Firebase Storage library
+    implementation("com.google.firebase:firebase-storage:20.2.0")
+
+    // JavaMail API for Android
+    implementation("com.sun.mail:android-mail:1.6.7")
+    implementation("com.sun.mail:android-activation:1.6.7")
+
 }

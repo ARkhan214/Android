@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodDonation">
         <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751445418009",
+    "project_id": "librarymanagement-214",
+    "storage_bucket": "librarymanagement-214.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751445418009:android:d5eef3f8e444c5dc440a88",
+        "android_client_info": {
+          "package_name": "com.emranhss.librarymanagementsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPHJJBjMYAT5-twa_PcTN7V13e5ktBhrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
