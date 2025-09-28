@@ -14,9 +14,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.bumptech.glide.Glide;
 import com.emranhss.blooddonation.Email.JavaMailApi;
 import com.emranhss.blooddonation.Model.User;
+import com.emranhss.blooddonation.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,23 +36,30 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
+
+
+
     private Context context;
     private List<User> userList;
+
 
     public UserAdapter(Context context, List<User> userList) {
         this.context = context;
         this.userList = userList;
     }
 
+
+
+
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.user_displayed_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserAdapter.ViewHolder holder, int position) {
 
         final User user = userList.get(position);
 
@@ -130,12 +139,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                 context.startActivity(in);
             }
         });
+
+
     }
 
     @Override
     public int getItemCount() {
-        return userList.size();
+        return 0;
     }
+
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -157,6 +171,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         }
     }
+
+
+
     private void addNotifications(String receiverID, String senderID){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("notifications").child(receiverID);
         String date = DateFormat.getDateInstance().format(new Date());
@@ -168,5 +185,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
         reference.push().setValue(hashMap);
     }
+
+
+
 
 }
